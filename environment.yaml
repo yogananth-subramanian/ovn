@@ -1,0 +1,39 @@
+resource_registry:
+  OS::TripleO::ComputeOvsDpdkSriov::Net::SoftwareConfig: nic-configs/computeovsdpdksriov.yaml
+  OS::TripleO::ComputeSriov::Net::SoftwareConfig: nic-configs/computesriov.yaml
+  OS::TripleO::Controller::Net::SoftwareConfig: nic-configs/controller.yaml
+
+parameter_defaults:
+  NtpServer: "clock.redhat.com"
+  SshServerOptions:
+    UseDns: 'no'
+
+  ControlPlaneDefaultRoute: "192.168.24.1"
+  ControlPlaneSubnetCidr: "24"
+  DnsServers: ['10.11.5.19']
+  EC2MetadataIp: "192.168.24.1"
+
+  NeutronExternalNetworkBridge: "'br-ex'"
+
+  ControllerCount: 1
+  OvercloudControllerFlavor: controller
+  ComputeOvsDpdkSriovCount: 1
+  ComputeSriovCount: 1
+  OvercloudComputeOvsDpdkSriovFlavor: compute
+  OvercloudComputeSriovFlavor: compute
+
+  NeutronBridgeMappings: "datacentre:br-ex,data1:br-link0,data2:br-link1"
+  NeutronFlatNetworks: "datacentre,data1,data2,sriov1,sriov2"
+  NeutronNetworkVLANRanges: "data1:406:410,data2:406:410,sriov1:406:410,sriov2:406:410"
+  NeutronNetworkType: ['geneve', 'vlan']
+  NeutronTunnelTypes: "geneve"
+
+  NovaPCIPassthrough:
+    - devname: "eno3"
+      trusted: "true"
+      physical_network: "sriov1"
+    - devname: "eno4"
+      trusted: "true"
+      physical_network: "sriov2"
+  NeutronPhysicalDevMappings: "sriov1:eno3,sriov2:eno4"
+  NeutronSriovAgentExtensions: qos

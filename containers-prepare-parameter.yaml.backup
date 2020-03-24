@@ -1,0 +1,12 @@
+# Generated with the following on 2020-02-04T08:29:52.829273
+#
+#   openstack overcloud container image prepare --namespace registry-proxy.engineering.redhat.com/rh-osbs --prefix rhosp16-openstack- --tag 20200130.1 --output-env-file containers-prepare-pa
+#
+parameter_defaults:
+  ContainerImagePrepare:
+    set:
+      namespace: registry-proxy.engineering.redhat.com/rh-osbs
+      name_prefix: rhosp16-openstack-
+      name_sufix: ''
+      tag: 20200130.1
+    tag_from_label: "{version}-{release}"
