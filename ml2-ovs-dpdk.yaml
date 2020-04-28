@@ -2,7 +2,7 @@ parameter_defaults:
  ComputeOvsDpdkSriovParameters:
   OvsDpdkCoreList: 0-1,12-13
   OvsDpdkMemoryChannels: 4
-  OvsPmdCoreList: 10-11,22-23
+  OvsPmdCoreList: 10,22
   NovaComputeCpuDedicatedSet: ['2-9','14-21']
   NovaComputeCpuSharedSet: ['0-1','12-13']
   IsolCpusList: 2-11,14-23
