@@ -27,6 +27,7 @@ parameter_defaults:
   NeutronNetworkVLANRanges: "data1:406:410,data2:406:410,sriov1:406:410,sriov2:406:410"
   NeutronNetworkType: ['geneve', 'vlan']
   NeutronTunnelTypes: "geneve"
+  NeutronEnableDVR: false
 
   NovaPCIPassthrough:
     - devname: "eno3"
