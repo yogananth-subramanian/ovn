@@ -7,18 +7,18 @@ parameter_defaults:
   ContainerImagePrepare:
   - set:
       ceph_alertmanager_image: openshift-ose-prometheus-alertmanager
-      ceph_alertmanager_namespace: registry-proxy.engineering.redhat.com/rh-osbs
+      ceph_alertmanager_namespace: rhos-qe-mirror-tlv.usersys.redhat.com:5002/rh-osbs
       ceph_alertmanager_tag: v4.1
       ceph_grafana_image: rhceph-3-dashboard-rhel7
       ceph_grafana_namespace: registry.access.redhat.com/rhceph
       ceph_grafana_tag: 3
-      ceph_image: rhceph-4.0-rhel8
+      ceph_image: ceph-4.0-rhel-8
       ceph_namespace: docker-registry.upshift.redhat.com/ceph
       ceph_node_exporter_image: openshift-ose-prometheus-node-exporter
-      ceph_node_exporter_namespace: registry-proxy.engineering.redhat.com/rh-osbs
+      ceph_node_exporter_namespace: rhos-qe-mirror-tlv.usersys.redhat.com:5002/rh-osbs
       ceph_node_exporter_tag: v4.1
       ceph_prometheus_image: openshift-ose-prometheus
-      ceph_prometheus_namespace: registry-proxy.engineering.redhat.com/rh-osbs
+      ceph_prometheus_namespace: rhos-qe-mirror-tlv.usersys.redhat.com:5002/rh-osbs
       ceph_prometheus_tag: v4.1
       ceph_tag: latest
       name_prefix: rhosp16-openstack-
@@ -26,4 +26,4 @@ parameter_defaults:
       namespace: registry-proxy.engineering.redhat.com/rh-osbs
       neutron_driver: ovn
       rhel_containers: false
-      tag: 20200130.1
+      tag: 16.1_20200505.1
