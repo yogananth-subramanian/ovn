@@ -14,6 +14,7 @@ openstack overcloud deploy --templates \
     -e /usr/share/openstack-tripleo-heat-templates/environments/services/neutron-ovn-sriov.yaml \
     -e /usr/share/openstack-tripleo-heat-templates/environments/disable-telemetry.yaml \
     -e ~/ovn/debug.yaml \
+    -e ~/ovn/api-policies.yaml \
     -e ~/ovn/environment.yaml \
     -e ~/ovn/ml2-ovs-dpdk.yaml \
     -e ~/ovn/containers-prepare-parameter.yaml
