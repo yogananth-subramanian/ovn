@@ -224,16 +224,15 @@ resources:
                   members:
                    - type: interface
                      name: eno3
-              - type: ovs_user_bridge
-                name: br-link1
+              - type: sriov_pf
+                name: eno4
                 use_dhcp: false
-                members:
-                - type: ovs_dpdk_port
-                  name: br-link1-dpdk-port0
-                  rx_queue: 2
-                  members:
-                   - type: interface
-                     name: eno4
+                numvfs: 5
+                defroute: false
+                nm_controlled: true
+                hotplug: true
+                promisc: false
+
 outputs:
   OS::stack_id:
     description: The OsNetConfigImpl resource.
