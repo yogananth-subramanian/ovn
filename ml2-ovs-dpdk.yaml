@@ -16,5 +16,5 @@ parameter_defaults:
   NovaComputeCpuDedicatedSet: ['4-23']
   NovaComputeCpuSharedSet: ['0-3'] 
 
- ControllerSriovParameters:
-  OVNCMSOptions: "enable-chassis-as-gw"
+ #ControllerSriovParameters:
+ # OVNCMSOptions: "enable-chassis-as-gw"

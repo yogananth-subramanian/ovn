@@ -1,9 +1,9 @@
 resource_registry:
   OS::TripleO::ComputeOvsDpdkSriov::Net::SoftwareConfig: nic-configs/computeovsdpdksriov.yaml
   OS::TripleO::ComputeSriov::Net::SoftwareConfig: nic-configs/computesriov.yaml
-  #OS::TripleO::Controller::Net::SoftwareConfig: nic-configs/controller.yaml
-  OS::TripleO::ControllerSriov::Net::SoftwareConfig: nic-configs/controllersriov.yaml
-  OS::TripleO::Servies::NeutronDhcpAgent: OS::Heat::None
+  OS::TripleO::Controller::Net::SoftwareConfig: nic-configs/controller.yaml
+  #OS::TripleO::ControllerSriov::Net::SoftwareConfig: nic-configs/controllersriov.yaml
+  #OS::TripleO::Servies::NeutronDhcpAgent: OS::Heat::None
 
 parameter_defaults:
   NtpServer: "clock.redhat.com"
@@ -15,13 +15,15 @@ parameter_defaults:
   DnsServers: ['10.11.5.19']
   EC2MetadataIp: "192.168.24.1"
 
-  NeutronExternalNetworkBridge: "'br-ex'"
+  #NeutronExternalNetworkBridge: "'br-ex'"
+  NeutronExternalNetworkBridge: "''"
 
-  #ControllerCount: 1
-  ControllerSriovCount: 1
-  ComputeOvsDpdkSriovCount: 0
-  ComputeSriovCount: 2
-  OvercloudControllerSriovFlavor: controller
+  ControllerCount: 1
+  #ControllerSriovCount: 1
+  ComputeOvsDpdkSriovCount: 2
+  ComputeSriovCount: 0
+  #OvercloudControllerSriovFlavor: controller
+  OvercloudControllerFlavor: controller
   OvercloudComputeOvsDpdkSriovFlavor: compute
   OvercloudComputeSriovFlavor: compute
 
@@ -30,7 +32,7 @@ parameter_defaults:
   NeutronNetworkVLANRanges: "data1:406:410,data2:406:410,sriov1:406:410,sriov2:406:410"
   NeutronNetworkType: ['geneve', 'vlan']
   NeutronTunnelTypes: "geneve"
-  NeutronEnableDVR: false
+  #NeutronEnableDVR: false
 
   NovaPCIPassthrough:
     - devname: "eno3"
