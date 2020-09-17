@@ -25,7 +25,7 @@
 - name: Tenant
   vip: false  # Tenant networks do not use VIPs
   name_lower: tenant
-  vlan: 404
+  vlan: 406
   ip_subnet: '152.20.0.0/24'
   gateway_ip: '152.20.0.1'
   routes: [{'destination':'152.20.0.0/20', 'nexthop':'152.20.0.1'}]

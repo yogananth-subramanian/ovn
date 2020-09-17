@@ -19,27 +19,25 @@ parameter_defaults:
 
   #ControllerCount: 1
   ControllerSriovCount: 1
-  ComputeOvsDpdkSriovCount: 0
-  ComputeSriovCount: 2
+  ComputeOvsDpdkSriovCount: 2
+  ComputeSriovCount: 0
   OvercloudControllerSriovFlavor: controller
+  #OvercloudControllerFlavor: controller
   OvercloudComputeOvsDpdkSriovFlavor: compute
   OvercloudComputeSriovFlavor: compute
 
   NeutronBridgeMappings: "datacentre:br-ex,data1:br-link0,data2:br-link1"
-  NeutronFlatNetworks: "datacentre,data1,data2,sriov1,sriov2"
-  NeutronNetworkVLANRanges: "data1:406:410,data2:406:410,sriov1:406:410,sriov2:406:410"
+  NeutronFlatNetworks: "datacentre,data1,data2,sriov2"
+  NeutronNetworkVLANRanges: "data1:407:410,data2:407:410,sriov2:407:410"
   NeutronNetworkType: ['geneve', 'vlan']
   NeutronTunnelTypes: "geneve"
   NeutronEnableDVR: false
 
   NovaPCIPassthrough:
-    - devname: "eno3"
-      trusted: "true"
-      physical_network: "sriov1"
     - devname: "eno4"
       trusted: "true"
       physical_network: "sriov2"
-  NeutronPhysicalDevMappings: "sriov1:eno3,sriov2:eno4"
+  NeutronPhysicalDevMappings: "sriov2:eno4"
   NeutronSriovAgentExtensions: qos
   NovaSchedulerDefaultFilters:
     - "RetryFilter"
