@@ -48,4 +48,5 @@ parameter_defaults:
     - "ServerGroupAntiAffinityFilter"
     - "ServerGroupAffinityFilter"
     - "PciPassthroughFilter"
+    - "NUMATopologyFilter"
     - "AggregateInstanceExtraSpecsFilter"
