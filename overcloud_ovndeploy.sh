@@ -17,4 +17,4 @@ openstack overcloud deploy --templates \
     -e ~/ovn/api-policies.yaml \
     -e ~/ovn/environment.yaml \
     -e ~/ovn/ml2-ovs-dpdk.yaml \
-    -e ~/ovn/containers-prepare-parameter.yaml
+    -e ~/containers-prepare-parameter.yaml

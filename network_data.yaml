@@ -25,7 +25,7 @@
 - name: Tenant
   vip: false  # Tenant networks do not use VIPs
   name_lower: tenant
-  vlan: 404
+  vlan: 406
   ip_subnet: '152.20.0.0/24'
   gateway_ip: '152.20.0.1'
   routes: [{'destination':'152.20.0.0/20', 'nexthop':'152.20.0.1'}]
@@ -34,6 +34,6 @@
 - name: External
   vip: true
   name_lower: external
-  ip_subnet: '172.16.0.0/24'
-  allocation_pools: [{'start': '172.16.0.201', 'end': '172.16.0.206'}]
-  gateway_ip: '172.16.0.1'
+  ip_subnet: '10.0.0.0/24'
+  allocation_pools: [{'start': '10.0.0.201', 'end': '10.0.0.206'}]
+  gateway_ip: '10.0.0.1'

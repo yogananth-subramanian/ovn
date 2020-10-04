@@ -203,7 +203,7 @@ resources:
                     get_param: ExternalInterfaceDefaultRoute
                 members:
                 - type: interface
-                  name: ens6
+                  name: ens5
               - type: vlan
                 device: ens3
                 vlan_id:
@@ -225,29 +225,23 @@ resources:
                 addresses:
                 - ip_netmask:
                     get_param: StorageMgmtIpSubnet
-              - type: vlan
-                device: ens3
-                vlan_id:
-                  get_param: TenantNetworkVlanID
-                addresses:
-                - ip_netmask:
-                    get_param: TenantIpSubnet
               - type: ovs_bridge
                 name: br-link0
                 use_dhcp: false
                 members:
                 - type: interface
                   name: ens4
-                  use_dhcp: false
-                  primary: true
-              - type: ovs_bridge
-                name: br-link1
-                use_dhcp: false
-                members:
-                - type: interface
-                  name: ens5
-                  use_dhcp: false
-                  primary: true
+                - type: vlan
+                  vlan_id:
+                    get_param: TenantNetworkVlanID
+                  addresses:
+                  - ip_netmask:
+                      get_param: TenantIpSubnet
+              - type: interface
+                name: ens6
+                use_dhcp: true
+                defroute: false
+
 outputs:
   OS::stack_id:
     description: The OsNetConfigImpl resource.
