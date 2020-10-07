@@ -26,9 +26,9 @@ parameter_defaults:
   OvercloudComputeOvsDpdkSriovFlavor: compute
   OvercloudComputeSriovFlavor: compute
 
-  NeutronBridgeMappings: "datacentre:br-ex,data1:br-link0"
+  NeutronBridgeMappings: "datacentre:br-ex,data1:br-link0,data2:br-link1"
   NeutronFlatNetworks: "datacentre,data1"
-  NeutronNetworkVLANRanges: "data1:407:410"
+  NeutronNetworkVLANRanges: "data1:407:410,data2:407:410,sriov2:407:410"
   NeutronNetworkType: ['geneve', 'vlan']
   NeutronTunnelTypes: "geneve"
   DerivePciWhitelistEnabled: false
@@ -47,3 +47,4 @@ parameter_defaults:
     - "PciPassthroughFilter"
     - "NUMATopologyFilter"
     - "AggregateInstanceExtraSpecsFilter"
+
