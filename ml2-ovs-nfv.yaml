@@ -25,3 +25,9 @@ parameter_defaults:
     NovaReservedHostMemory: 4096
     NovaVcpuPinSet: ['1-11','13-23']
     NovaComputeCpuSharedSet: ['0','12']
+
+  ControllerSriovParameters:
+    OVNCMSOptions: "enable-chassis-as-gw"
+
+  ControllerParameters:
+    OVNCMSOptions: "enable-chassis-as-gw"

@@ -3,25 +3,32 @@ parameter_defaults:
 
   ControlPlaneSubnet: leaf0
   ControllerControlPlaneSubnet: leaf0
+  ControllerSriovControlPlaneSubnet: leaf0
   ComputeControlPlaneSubnet: leaf0
   ComputeOvsDpdkSriovControlPlaneSubnet: leaf0
   ComputeSriovControlPlaneSubnet: leaf0
   ComputeSriovOffloadControlPlaneSubnet: leaf0
 
+  ControllerSriovHostnameFormat: 'controller-%index%'
   ControllerHostnameFormat: 'controller-%index%'
   ComputeSriovOffloadHostnameFormat: 'cmpt-offload-%index%'
 
   NeutronTunnelTypes: ''
   NeutronNetworkType: 'vlan'
+  NeutronExternalNetworkBridge: "'br-ex'"
 
+
+  OvercloudControllerSriovFlavor: "controller"
   OvercloudControllerFlavor: "controller"
   #OvercloudComputeFlavor: "compute"
   #OvercloudComputeOvsDpdkFlavor: "compute"
   #OvercloudComputeOvsDpdkSriovFlavor: "compute"
   #OvercloudComputeSriovFlavor: "compute"
   OvercloudComputeSriovOffloadFlavor: "compute"
+  #NeutronEnableDVR: false
 
-  ControllerCount: 1
+  ControllerSriovCount: 1
+  #ControllerCount: 1
   ComputeOvsDpdkSriovCount: 0
   ComputeSriovCount: 0
   ComputeSriovOffloadCount: 2
